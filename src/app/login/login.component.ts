@@ -7,6 +7,7 @@ import {PessoaModel} from '../Pessoa/Pessoa-model'
 
 @Component({
   selector: 'app-login',
+  styleUrls: ['../../styles.css'],
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.authSvc.handShake()
     PessoaService.currentPessoa = null
     this.loginForm = this.formBuilder.group({
-      telefone: this.formBuilder.control('',[Validators.required]),
+      email: this.formBuilder.control('',[Validators.required]),
       senha: this.formBuilder.control('',[Validators.required])
     })
   }

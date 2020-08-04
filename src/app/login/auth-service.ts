@@ -3,7 +3,7 @@ import { Http, RequestOptions, Headers } from "@angular/http";
 import { JWTResponse, BASE_PATH_SERVER } from "../app.api";
 
 const HandShakeURL = BASE_PATH_SERVER.replace(
-    'NaFila',
+    'doar_faz_bem',
     'handshake'
 )
 
@@ -42,6 +42,7 @@ export class AuthService{
         ).subscribe(
             resp => {
                 const obj:JWTResponse = (<JWTResponse> resp.json())
+                console.log('*** auth-service =>', obj)
                 AuthService.header = this.getHeaders(
                     obj.access_token
                 )

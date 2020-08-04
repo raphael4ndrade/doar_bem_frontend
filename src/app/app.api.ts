@@ -8,4 +8,4 @@ export interface JWTResponse{
     access_token: string
 }
 
-export const BASE_PATH_SERVER = 'http://localhost:5000'
+export const BASE_PATH_SERVER = 'http://localhost:5000/doar_faz_bem'

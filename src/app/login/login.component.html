@@ -1,12 +1,12 @@
 <div class="card card-login mx-auto">
 	<div class="card-header">
-        NaFila Login
+        Doar Bem Login
     </div>
-    <div class="card-body">
+    <div class="card-body doe-fundo">
         <form [formGroup]="loginForm" novalidate> 
 
                 <div class="form-group">
-                    <label>Eamil:</label>
+                    <label>Email:</label>
                     <input formControlName="email" type="text" class="form-control" placeholder="Email">
                 </div>
                 <div class="row">
@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-4 form-group">
                         <button (click)="doLogin(loginForm.value)" type="button" [disabled]="!loginForm.valid" 
-                        class="btn btn-info btn-block" style="height:100%">Entrar
+                        class="btn btn-red btn-block" style="height:100%">Entrar
                         </button>
                     </div>
                 </div>

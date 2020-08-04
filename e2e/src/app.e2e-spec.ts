@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('NaFila2 app is running!');
+    expect(page.getTitleText()).toEqual('doar_bem2 app is running!');
   });
 
   afterEach(async () => {
