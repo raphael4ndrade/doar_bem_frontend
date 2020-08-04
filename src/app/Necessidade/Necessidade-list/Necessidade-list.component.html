@@ -1,0 +1,19 @@
+<div class="row">
+
+  <div *ngFor="let Necessidade of Navigator.view(items)" class="col-sm-6 col-xs-12">
+    <app-Necessidade-item [Necessidade]="Necessidade">
+          <div>
+              <app-delete-button (delete)="remove(Necessidade)">
+              </app-delete-button>
+            
+          </div>
+    </app-Necessidade-item>
+  </div>
+  <h4 *ngIf="!items" class="jumbotron ml-4">Necessidade Not found. :(</h4>
+  
+</div>
+
+<app-navigator 
+  [maxItems]="4"
+  #Navigator
+></app-navigator>

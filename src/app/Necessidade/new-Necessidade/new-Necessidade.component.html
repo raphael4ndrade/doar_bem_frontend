@@ -1,0 +1,62 @@
+<div class="card mx-auto">
+	<div class="card-header">
+        New Necessidade
+    </div>
+
+    <div class="card-body">
+        <form [formGroup]="NecessidadeForm" novalidate> 
+                <div class="form-row">
+                    <div class="col">
+                        <label>descricao:</label>
+                        <input formControlName="descricao" type="text" class="form-control" placeholder="descricao">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>quantidade:</label>
+                        <input formControlName="quantidade" type="text" class="form-control" placeholder="quantidade">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>logotipo:</label>
+                        <input formControlName="logotipo" type="text" class="form-control" placeholder="logotipo">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>hashtags:</label>
+                        <input formControlName="hashtags" type="text" class="form-control" placeholder="hashtags">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>data:</label>
+                        <input formControlName="data" type="text" class="form-control" placeholder="data">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="col">
+                        <label>pessoa:</label>
+                        <input formControlName="pessoa" type="text" class="form-control" placeholder="pessoa" readonly>
+                    </div>
+                </div>
+
+
+
+
+            <div class=" form-group">
+                <button (click)="NecessidadeList.save(NecessidadeForm.value)" type="button" [disabled]="!NecessidadeForm.valid" 
+                class="btn btn-info btn-block">
+                  Save Necessidade
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<app-Necessidade-list
+#NecessidadeList
+></app-Necessidade-list>

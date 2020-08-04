@@ -1,0 +1,68 @@
+import { Http, RequestOptions, Response } from "@angular/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "../../../node_modules/rxjs";
+import { NecessidadeModel } from "./Necessidade-model";
+import { RespJsonFlask, BASE_PATH_SERVER } from "../app.api";
+import { AuthService } from '../login/auth-service'
+
+const Necessidade_API = `${BASE_PATH_SERVER}/doar_faz_bem/Necessidade`
+
+
+@Injectable()
+export class NecessidadeService{
+
+    static currentNecessidade: NecessidadeModel
+
+    static getCurrNecessidade(){
+        if(NecessidadeService.currentNecessidade){
+            return NecessidadeService.currentNecessidade.descricao
+        }else{
+            return ''
+        }
+    }
+
+    constructor(private http: Http){
+    }
+
+    allNecessidades():Observable<Response>{
+        return this.http.get(
+            Necessidade_API
+            ,new RequestOptions({headers: AuthService.header})
+        )
+    }
+
+    NecessidadesByTitle(text: string):Observable<Response>{
+        return this.http.get(
+            `${Necessidade_API}?descricao=${text}`
+            ,new RequestOptions({headers: AuthService.header})
+        )
+    }
+
+    delete(descricao: string): void{
+        this.http.delete(
+            `${Necessidade_API}/${descricao}`
+            ,new RequestOptions({headers: AuthService.header})
+        ).subscribe(
+            resp => {
+                const obj:RespJsonFlask = (<RespJsonFlask>resp.json())
+                let data:NecessidadeModel = (<NecessidadeModel>obj.data)
+                console.log('"Necessidade.Delete" = ', data)
+            }
+        )
+    }
+
+    saveNecessidade(newItem: NecessidadeModel): void{
+        this.http.post(
+            Necessidade_API,
+            JSON.stringify(newItem)
+            ,new RequestOptions({headers: AuthService.header})
+        ).subscribe(
+            resp => {
+                const obj:RespJsonFlask = (<RespJsonFlask>resp.json())
+                let data:NecessidadeModel = (<NecessidadeModel>obj.data)
+                console.log('"saveNecessidade" = ', data)
+            }
+        )
+    }
+
+}
