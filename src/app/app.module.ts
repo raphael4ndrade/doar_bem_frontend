@@ -5,21 +5,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
-import { LojaComponent } from './Loja/Loja-component';
-import { LojaItemComponent } from './Loja/Loja-item/Loja-item.component';
-import { LojaService } from './Loja/Loja-service';
-import { LojaListComponent } from './Loja/Loja-list/Loja-list.component';
-import { NewLojaComponent } from './Loja/new-Loja/new-Loja.component';
+import { NecessidadeComponent } from './Necessidade/Necessidade-component';
+import { NecessidadeItemComponent } from './Necessidade/Necessidade-item/Necessidade-item.component';
+import { NecessidadeService } from './Necessidade/Necessidade-service';
+import { NecessidadeListComponent } from './Necessidade/Necessidade-list/Necessidade-list.component';
+import { NewNecessidadeComponent } from './Necessidade/new-Necessidade/new-Necessidade.component';
 import { PessoaComponent } from './Pessoa/Pessoa-component';
 import { PessoaItemComponent } from './Pessoa/Pessoa-item/Pessoa-item.component';
 import { PessoaService } from './Pessoa/Pessoa-service';
 import { PessoaListComponent } from './Pessoa/Pessoa-list/Pessoa-list.component';
 import { NewPessoaComponent } from './Pessoa/new-Pessoa/new-Pessoa.component';
-import { FilaComponent } from './Fila/Fila-component';
-import { FilaItemComponent } from './Fila/Fila-item/Fila-item.component';
-import { FilaService } from './Fila/Fila-service';
-import { FilaListComponent } from './Fila/Fila-list/Fila-list.component';
-import { NewFilaComponent } from './Fila/new-Fila/new-Fila.component';
+// import { MensagemComponent } from './Mensagem/Mensagem-component';
+// import { MensagemItemComponent } from './Mensagem/Mensagem-item/Mensagem-item.component';
+import { MensagemService } from './Mensagem/Mensagem-service';
+// import { MensagemListComponent } from './Mensagem/Mensagem-list/Mensagem-list.component';
+// import { NewMensagemComponent } from './Mensagem/new-Mensagem/new-Mensagem.component';
 import {LoginComponent} from './login/login.component'
 import { NavigatorComponent } from './shared/navigator/navigator.component';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
@@ -33,18 +33,18 @@ import { LoginGuard } from './login/login.guard'
 @NgModule({
   declarations: [
     AppComponent,
-    LojaComponent,
-    LojaItemComponent,
-    LojaListComponent,
-    NewLojaComponent,
+    NecessidadeComponent,
+    NecessidadeItemComponent,
+    NecessidadeListComponent,
+    NewNecessidadeComponent,
     PessoaComponent,
     PessoaItemComponent,
     PessoaListComponent,
     NewPessoaComponent,
-    FilaComponent,
-    FilaItemComponent,
-    FilaListComponent,
-    NewFilaComponent,
+    // MensagemComponent,
+    // MensagemItemComponent,
+    // MensagemListComponent,
+    // NewMensagemComponent,
     LoginComponent,
     HeaderComponent,
     SearchBarComponent,
@@ -59,9 +59,9 @@ import { LoginGuard } from './login/login.guard'
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
-    LojaService,
+    NecessidadeService,
     PessoaService,
-    FilaService,
+    MensagemService,
     ZipCodeService,
     AuthService,
     LoginGuard

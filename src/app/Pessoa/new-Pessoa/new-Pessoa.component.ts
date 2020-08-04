@@ -91,23 +91,9 @@ export class NewPessoaComponent implements OnInit {
     this.selectedImage = image
   }
 
-  tiposPessoa():string[]{
-    let Result: string[] = [
-        'Não-Preferencial',
-        'Grávida/Idoso',
-        'Deficiente'
-    ]
-    if(this.isAdmin())
-      Result.push('Admin')
-    return Result
-  }
 
   setAddress(value: string){
     this.PessoaForm.get('endereco').setValue(value)
-  }
-
-  isAdmin():Boolean{
-    return PessoaService.isAdmin()
   }
 
 }

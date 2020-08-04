@@ -13,8 +13,8 @@
                 </div>
                 <div class="form-row">
                     <div class="col">
-                        <label>Telefone:</label>
-                        <input formControlName="telefone" type="text" class="form-control" placeholder="Telefone">
+                        <label>Email:</label>
+                        <input formControlName="email" type="text" class="form-control" placeholder="Email">
                     </div>
                     <div class="col">
                         <label>Senha:</label>
@@ -35,15 +35,8 @@
                 
                 <div class="form-row mt-4">
                     <div class="col">
-                        <label>Tipo de usuário:</label>
-                        <select formControlName="tipo">
-
-                            <option *ngFor="let tipo of tiposPessoa()" 
-                            value="{{tipo}}">
-                                {{tipo}}
-                            </option>
-                  
-                        </select>
+                        <label>CPF/CNPJ:</label>
+                        <input formControlName="cpf_cnpj" type="text" class="form-control">
                     </div>
                     <div class="col-auto">
                         <label>Imagem de avatar:</label>
@@ -71,6 +64,6 @@
 
 </div>
 
-<app-Pessoa-list [hidden]="!isAdmin()"
+<app-Pessoa-list
 #PessoaList
 ></app-Pessoa-list>

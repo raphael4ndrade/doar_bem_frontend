@@ -16,6 +16,14 @@ export class PessoaService{
     static currentPessoa: PessoaModel
     static selectedImage: string
 
+    static getCurrPessoa(): string{
+        if(PessoaService.currentPessoa){
+            return PessoaService.currentPessoa.nome
+        }else{
+            return ''
+        }
+    }
+
     pessoaLogin(params: PessoaModel):void{
         this.http.get(
             `${Pessoa_API}?email=${params.email}&senha=${params.senha}`

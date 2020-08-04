@@ -13,7 +13,7 @@ export class NecessidadeService{
 
     static currentNecessidade: NecessidadeModel
 
-    static getCurrNecessidade(){
+    static getCurrNecessidade(): string{
         if(NecessidadeService.currentNecessidade){
             return NecessidadeService.currentNecessidade.descricao
         }else{

@@ -3,8 +3,7 @@ import { NecessidadeModel } from '../Necessidade-model';
 
 @Component({
   selector: 'app-Necessidade-item',
-  templateUrl: './Necessidade-item.component.html',
-  styleUrls: ['./Necessidade-item.component.css']
+  templateUrl: './Necessidade-item.component.html'
 })
 export class NecessidadeItemComponent implements OnInit {
 

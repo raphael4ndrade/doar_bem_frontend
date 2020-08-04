@@ -12,5 +12,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  noUser():Boolean {
+    return PessoaService.currentPessoa == null
+  }  
 
 }

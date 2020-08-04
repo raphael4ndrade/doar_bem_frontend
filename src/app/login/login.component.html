@@ -6,8 +6,8 @@
         <form [formGroup]="loginForm" novalidate> 
 
                 <div class="form-group">
-                    <label>Telefone:</label>
-                    <input formControlName="telefone" type="text" class="form-control" placeholder="Telefone">
+                    <label>Eamil:</label>
+                    <input formControlName="email" type="text" class="form-control" placeholder="Email">
                 </div>
                 <div class="row">
                     <div class="col-8 form-group">
@@ -23,6 +23,13 @@
 
         </form>
     </div>
-    <strong>Não possui cadastro?</strong><a [routerLink]="['/new-Pessoa']">Registre-se!</a>
+    <div class="ml-4 row">
+        <div class="col-3">
+            <strong>Não possui cadastro?</strong>
+        </div>
+        <div class="col">
+            <a [routerLink]="['/new-Pessoa']">Registre-se!</a>
+        </div>
+    </div>
 
 </div>
