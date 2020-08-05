@@ -76,9 +76,10 @@ export class NewPessoaComponent implements OnInit {
   ngOnInit() {
     this.router.onSameUrlNavigation = "reload"
     this.PessoaForm = this.formBuilder.group({
+      cpf_cnpj : this.formBuilder.control('',[Validators.required]),
       nome : this.formBuilder.control('',[Validators.required]),
       tipo : this.formBuilder.control('',[Validators.required]),
-      telefone : this.formBuilder.control('',[Validators.required]),
+      email : this.formBuilder.control('',[Validators.required]),
       // CEP : this.formBuilder.control('',[Validators.required]),
       endereco : this.formBuilder.control('',[Validators.required]),
       foto : this.formBuilder.control('',[Validators.required]),
@@ -95,5 +96,9 @@ export class NewPessoaComponent implements OnInit {
   setAddress(value: string){
     this.PessoaForm.get('endereco').setValue(value)
   }
+
+  noUser():Boolean {
+    return PessoaService.currentPessoa == null
+  }  
 
 }

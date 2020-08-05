@@ -1,8 +1,7 @@
 {
-    "/doar_faz_bem/*": {
+    "*": {
     "target": "http://localhost:5000",
     "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true
+    "logLevel": "debug"
   }
 }
