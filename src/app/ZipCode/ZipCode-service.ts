@@ -1,7 +1,6 @@
 import { Http, Response } from "@angular/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "../../../node_modules/rxjs";
-import { AddressModel } from "./ZipCode-model";
 
 
 @Injectable()

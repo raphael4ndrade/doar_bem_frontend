@@ -42,7 +42,6 @@ export class AuthService{
         ).subscribe(
             resp => {
                 const obj:JWTResponse = (<JWTResponse> resp.json())
-                console.log('*** auth-service =>', obj)
                 AuthService.header = this.getHeaders(
                     obj.access_token
                 )

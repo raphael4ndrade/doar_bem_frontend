@@ -8,6 +8,7 @@ import {PessoaService} from '../../Pessoa/Pessoa-service'
 
 @Component({
   selector: 'app-new-Necessidade',
+  styleUrls: ['../../../styles.css'],
   templateUrl: './new-Necessidade.component.html'
 })
 export class NewNecessidadeComponent implements OnInit {
@@ -24,7 +25,7 @@ export class NewNecessidadeComponent implements OnInit {
     this.router.onSameUrlNavigation = "reload"
     this.NecessidadeForm = this.formBuilder.group({
       descricao : this.formBuilder.control('',[Validators.required]),
-      quantidade : this.formBuilder.control('',[Validators.required]),
+      quantidade : this.formBuilder.control('1',[Validators.required]),
       logotipo : this.formBuilder.control('',[Validators.required]),
       hashtags : this.formBuilder.control('',[Validators.required]),
       data : this.formBuilder.control('',[Validators.required]),
@@ -39,7 +40,7 @@ export class NewNecessidadeComponent implements OnInit {
         this.NecessidadeForm.get('descricao').valueChanges.subscribe(
         newValue => {
             this.NecessidadeForm.get('logotipo').setValue(
-            `assets/img/Necessidade/${newValue}.jpg`
+            `assets/img/produtos/${newValue}.jpg`
             )
         }
         )

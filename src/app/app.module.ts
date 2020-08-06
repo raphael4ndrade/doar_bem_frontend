@@ -29,6 +29,7 @@ import {ZipCodeService} from './ZipCode/ZipCode-service'
 import { ZipCodeComponent } from './ZipCode/ZipCode-component'
 import { AuthService } from './login/auth-service'
 import { LoginGuard } from './login/login.guard'
+import { ReceitaService } from './ReceitaFederal/Receita-service'
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { LoginGuard } from './login/login.guard'
     MensagemService,
     ZipCodeService,
     AuthService,
-    LoginGuard
+    LoginGuard,
+    ReceitaService
   ],
   bootstrap: [AppComponent]
 })

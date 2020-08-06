@@ -3,8 +3,8 @@
   <div *ngFor="let Pessoa of Navigator.view(items)" class="col-sm-6 col-xs-12">
     <app-Pessoa-item [Pessoa]="Pessoa">
           <div>
-              <app-delete-button (delete)="remove(Pessoa)">
-              </app-delete-button>
+              <!-- <app-delete-button (delete)="remove(Pessoa)">
+              </app-delete-button> -->
 
               <button class="selectPessoaBtn"
               (click)="select(Pessoa)">

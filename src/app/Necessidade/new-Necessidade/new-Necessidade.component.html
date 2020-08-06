@@ -1,20 +1,26 @@
 <div class="card mx-auto">
 	<div class="card-header">
-        New Necessidade
+        Nova Campanha
     </div>
 
     <div class="card-body">
         <form [formGroup]="NecessidadeForm" novalidate> 
                 <div class="form-row">
                     <div class="col">
-                        <label>descricao:</label>
+                        <label>Descrição:</label>
                         <input formControlName="descricao" type="text" class="form-control" placeholder="descricao">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col">
-                        <label>quantidade:</label>
-                        <input formControlName="quantidade" type="text" class="form-control" placeholder="quantidade">
+                    <div class="form-row">
+                        <div class="col">
+                            <label>Data:</label>
+                            <input formControlName="data" type="text" class="form-control" placeholder="Data">
+                        </div>
+                    </div>
+                        <div class="col">
+                        <label>Quantidade:</label>
+                        <input formControlName="quantidade" type="number" min="1" class="form-control" placeholder="Quantidade">
                     </div>
                 </div>
                 <div class="form-row">
@@ -25,31 +31,20 @@
                 </div>
                 <div class="form-row">
                     <div class="col">
-                        <label>hashtags:</label>
-                        <input formControlName="hashtags" type="text" class="form-control" placeholder="hashtags">
+                        <label>Hashtags:</label>
+                        <input formControlName="hashtags" type="text" class="form-control" placeholder="Hashtags">
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="col">
-                        <label>data:</label>
-                        <input formControlName="data" type="text" class="form-control" placeholder="data">
+                        <label>Beneficiário:</label>
+                        <input formControlName="pessoa" type="text" class="form-control" readonly>
                     </div>
                 </div>
-                
-                <div class="form-row">
-                    <div class="col">
-                        <label>pessoa:</label>
-                        <input formControlName="pessoa" type="text" class="form-control" placeholder="pessoa" readonly>
-                    </div>
-                </div>
-
-
 
 
             <div class=" form-group">
                 <button (click)="NecessidadeList.save(NecessidadeForm.value)" type="button" [disabled]="!NecessidadeForm.valid" 
-                class="btn btn-info btn-block">
-                  Save Necessidade
+                class="btn btn-red btn-block">
+                  Gravar Necessidade
                 </button>
             </div>
         </form>

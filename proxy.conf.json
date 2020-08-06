@@ -1,6 +1,11 @@
 {
-    "*": {
+    "doar_faz_bem/*": {
     "target": "http://localhost:5000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "cnpj/*": {
+    "target": "http://www.receitaws.com.br/v1",
     "secure": false,
     "logLevel": "debug"
   }

@@ -45,10 +45,14 @@ export class PessoaService{
     
     constructor(
         private http: Http,
-        private router: Router
+        private router: Router,
+        private authSvc: AuthService
     ){  }
 
     allPessoas():Observable<Response>{
+        if(!AuthService.header){
+            this.authSvc.handShake()
+        }
         return this.http.get(
             Pessoa_API
             ,new RequestOptions({headers: AuthService.header})
