@@ -1,4 +1,4 @@
-
+import { PessoaModel } from '../Pessoa/Pessoa-model'
 
 export interface NecessidadeModel{
     id: string
@@ -7,7 +7,5 @@ export interface NecessidadeModel{
     logotipo: string
     hashtags: string
     dia: string
-
-    pessoa: any
-
+    pessoa: PessoaModel
 }

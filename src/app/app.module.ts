@@ -30,6 +30,7 @@ import { ZipCodeComponent } from './ZipCode/ZipCode-component'
 import { AuthService } from './login/auth-service'
 import { LoginGuard } from './login/login.guard'
 import { ReceitaService } from './ReceitaFederal/Receita-service'
+import { NecessidadeGuard } from './Necessidade/Necessidade-guard'
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ReceitaService } from './ReceitaFederal/Receita-service'
   ],
   providers: [
     NecessidadeService,
+    NecessidadeGuard,
     PessoaService,
     MensagemService,
     ZipCodeService,

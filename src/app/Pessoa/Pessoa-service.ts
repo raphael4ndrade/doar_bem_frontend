@@ -24,6 +24,11 @@ export class PessoaService{
         }
     }
 
+    static isONG():Boolean{
+        const pessoa = PessoaService.getCurrPessoa()
+        return pessoa.length == 14
+    }
+
     pessoaLogin(params: PessoaModel):void{
         this.http.get(
             `${Pessoa_API}?email=${params.email}&senha=${params.senha}`

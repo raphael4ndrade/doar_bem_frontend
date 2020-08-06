@@ -2,10 +2,9 @@
 
   <div *ngFor="let Necessidade of Navigator.view(items)" class="col-sm-6 col-xs-12">
     <app-Necessidade-item [Necessidade]="Necessidade">
-          <div>
+          <div *ngIf="isOwner(Necessidade)">
               <app-delete-button (delete)="remove(Necessidade)">
-              </app-delete-button>
-            
+              </app-delete-button>            
           </div>
     </app-Necessidade-item>
   </div>

@@ -5,6 +5,7 @@ import { NewNecessidadeComponent } from "./Necessidade/new-Necessidade/new-Neces
 import { PessoaComponent } from "./Pessoa/Pessoa-component";
 import { NewPessoaComponent } from "./Pessoa/new-Pessoa/new-Pessoa.component";
 import { LoginGuard } from "./login/login.guard";
+import { NecessidadeGuard } from './Necessidade/Necessidade-guard'
 
 export const ROUTES:Routes = [
     {path:'',component:LoginComponent},
@@ -12,7 +13,7 @@ export const ROUTES:Routes = [
         // ,canActivate: [LoginGuard]
     },
     {path:'Necessidade/:descricao',component: NecessidadeComponent,canActivate: [LoginGuard]},
-    {path:'new-Necessidade',component: NewNecessidadeComponent,canActivate: [LoginGuard]},
+    {path:'new-Necessidade',component: NewNecessidadeComponent,canActivate: [LoginGuard, NecessidadeGuard]},
     {path:'Pessoa',component:PessoaComponent,canActivate: [LoginGuard]},
     {path:'Pessoa/:name',component:PessoaComponent,canActivate: [LoginGuard]},
     {path:'new-Pessoa',component:NewPessoaComponent

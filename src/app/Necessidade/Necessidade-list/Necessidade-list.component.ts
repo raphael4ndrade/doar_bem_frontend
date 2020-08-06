@@ -53,8 +53,7 @@ export class NecessidadeListComponent implements OnInit {
   }
 
   save(item: NecessidadeModel){
-        item.pessoa = PessoaService.currentPessoa
-
+    item.pessoa = PessoaService.currentPessoa
     this.NecessidadeSvc.saveNecessidade(item)
     this.items.push(item)
   }
@@ -62,6 +61,10 @@ export class NecessidadeListComponent implements OnInit {
   select(item: NecessidadeModel){
     NecessidadeService.currentNecessidade = item
     this.router.navigate(['/new-'])
+  }
+
+  isOwner(item: NecessidadeModel):Boolean{
+    return item.pessoa.cpf_cnpj == PessoaService.pessoaLogin.cpf_cnpj
   }
 
 }
