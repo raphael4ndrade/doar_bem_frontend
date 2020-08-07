@@ -17,10 +17,14 @@
     <div class="row">
 
         <div class="col-4 mx-1">
-            <span class="text-muted small">
-                {{Necessidade.quantidade}}
+            <span *ngIf="Necessidade.quantidade < 0" class="badge badge-danger">
+                Campanha: {{-Necessidade.quantidade}}
+            </span>
+            <span *ngIf="Necessidade.quantidade > 0" class="badge badge-success">
+                Doação: {{Necessidade.quantidade}}
             </span>
         </div>
+
 
         <div class="col-6">
             <span class="text-muted small">

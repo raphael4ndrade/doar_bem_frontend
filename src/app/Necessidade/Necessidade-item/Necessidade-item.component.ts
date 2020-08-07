@@ -14,4 +14,10 @@ export class NecessidadeItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  isDoacao(item:NecessidadeModel):Boolean{
+    return item.quantidade > 0
+  }
+
+  
+
 }
