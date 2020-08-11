@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin(params: PessoaModel){
-    this.pessoaSvc.pessoaLogin(params)
+    this.pessoaSvc.loginPessoa(params)
   }
 
 }
