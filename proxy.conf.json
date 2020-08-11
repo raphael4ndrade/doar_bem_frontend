@@ -1,12 +1,14 @@
 {
-    "doar_faz_bem/*": {
+  "doar_faz_bem/*": {
     "target": "http://localhost:5000",
     "secure": false,
     "logLevel": "debug"
   },
-  "cnpj/*": {
-    "target": "http://www.receitaws.com.br/v1",
+  "/cnpj/*": {
+    "target": "https://www.receitaws.com.br/v1",
     "secure": false,
-    "logLevel": "debug"
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {"^/cnpj" : "http://www.receitaws.com.br/v1/cnpj"}
   }
 }
