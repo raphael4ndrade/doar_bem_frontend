@@ -23,7 +23,7 @@
 ---
 
 ### Navegando em Pessoas
-A página _New-Pessoa_ é formada de....
+A página _Pessoa-list_ é formada de....
 ![](./docs/Estrutura.png)
 
 - Header (com os links para as páginas do site)
