@@ -21,11 +21,13 @@ import { AddressModel, SearchZipModel } from './ZipCode-model'
         const zipCodeField: FormControl = new FormControl(
             '',[Validators.required]
         )
+        const complementoField: FormControl = new FormControl('', [Validators.required])
         this.zipCodeForm = new FormGroup({
             CEP: zipCodeField,
-            complemento: new FormControl('', [Validators.required]),
+            complemento: complementoField,
         })
         this.parentForm.addControl('CEP', zipCodeField)
+        this.parentForm.addControl('complemento', complementoField)
     }
 
     getFullAddress(address:AddressModel): string{
