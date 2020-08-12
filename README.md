@@ -13,6 +13,18 @@
 
 ##### `ATENÇÃO`: Os comandos de 1 a 3 são usado somente _na primeira vez_ para instalar as ferramentas, nas próximas vezes utilize apenas o comando 4.
 
+> Caso queira rodar também o back-end, rode os comandos abaixo:
+1) Instalar o Python
+    - `https://www.python.org/downloads/`
+2) Baixar os fontes do back-end **(numa pasta separada)**:
+    - `git clone https://github.com/jcezarc/doar_faz_bem.git`
+3) Atualizar os pacotes do back-end:
+    - `pip install -r requirements.txt`
+4) Rodar o back-end:
+    - `python app.py`
+
+##### `ATENÇÃO`: Os comandos de 1 a 3 são usado somente _na primeira vez_ para instalar as ferramentas, nas próximas vezes utilize apenas o comando 4.
+
 ---
 ### Login - Como funciona
 `(src/app/login...)`
