@@ -1,5 +1,19 @@
 # Doar Bem
+#### Manual técnio do site
 
+> O site **Doar Bem** foi feito em _Angular_, portanto o ambiente de desenvolvimento precisa dos seguintes comandos:
+1)  Instalar o Angular CLI
+    - `npm install -g @angular/cli`
+2) Instalar o YARN 
+    - https://classic.yarnpkg.com/pt-BR/docs/cli/install/
+3) Atualizar os pacotes do _Doar Bem_:
+    - digite `YARN` na linha de comando
+4) Rodar a versão local do site:
+    - `ng serve --open --proxy-config proxy.conf.json`
+
+##### `ATENÇÃO`: Os comandos de 1 a 3 são usado somente _na primeira vez_ para instalar as ferramentas, nas próximas vezes utilize apenas o comando 4.
+
+---
 ### Login - Como funciona
 `(src/app/login...)`
 - A pessoa entra com email e senha
