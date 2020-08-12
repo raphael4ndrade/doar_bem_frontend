@@ -35,6 +35,19 @@ export class MensagemService{
     }
 
     marcarComoLida(mensagem_id: number){
-        // TODO: http.put(....set lida="S")
+        const registro = {
+            id: mensagem_id,
+            lida: 'S'
+        }
+        this.http.put(
+            Mensagem_API,
+            JSON.stringify(registro)
+            ,new RequestOptions({headers: AuthService.header})
+        ).subscribe(
+            resp => {
+                const obj: RespJsonFlask = (<RespJsonFlask>resp.json())
+                console.log('marcarComoLida =', obj.data)
+            }
+        )
     }
 }
