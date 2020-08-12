@@ -1,5 +1,5 @@
 # Doar Bem
-#### Manual técnio do site
+## Manual técnio do site
 
 > O site **Doar Bem** foi feito em _Angular_, portanto o ambiente de desenvolvimento precisa dos seguintes comandos:
 1)  Instalar o Angular CLI
