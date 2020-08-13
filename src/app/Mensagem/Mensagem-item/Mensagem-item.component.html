@@ -1,0 +1,22 @@
+<tr>
+    <td>
+        <input type="checkbox" 
+        (change)="setRead($event.target.checked)">
+        <i class="fa fa-star" aria-hidden></i>
+    </td>
+    <td>
+        {{Mensagem.de.nome}}
+    </td>
+    <td>
+        {{Mensagem.conteudo}}
+    </td>
+    <td>
+        {{Mensagem.quantidade}}
+    </td>
+    <td>
+        {{Mensagem.campanha.descricao}}
+    </td>
+    <td>
+        {{Mensagem.dia}}
+    </td>
+</tr>

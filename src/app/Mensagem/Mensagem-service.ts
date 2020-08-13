@@ -14,7 +14,7 @@ export class MensagemService{
     constructor(private http: Http){
     }
 
-    mensagensPara(cpf_cnpj: string):Observable<Response>{
+    carregaMensagens(cpf_cnpj: string):Observable<Response>{
         return this.http.get(
             `${Mensagem_API}?para=${cpf_cnpj}&lida=N`
             ,new RequestOptions({headers: AuthService.header})
@@ -34,9 +34,9 @@ export class MensagemService{
         )
     }
 
-    marcarComoLida(mensagem_id: number){
+    marcarComoLida(idMensagens: number[]){
         const registro = {
-            id: mensagem_id,
+            id: idMensagens,
             lida: 'S'
         }
         this.http.put(

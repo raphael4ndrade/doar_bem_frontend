@@ -1,0 +1,12 @@
+<div>
+    <table class="table">
+        <tbody *ngFor="let Mensagem of items">
+            <app-Mensagem-item [Mensagem]="Mensagem">            
+            </app-Mensagem-item>
+        </tbody>
+    </table>
+    <button (click)="update()" class="btn btn-info btn-success">
+        Dar baixa nas doações
+    </button>    
+</div>
+
