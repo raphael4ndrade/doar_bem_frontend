@@ -67,4 +67,9 @@ export class NecessidadeListComponent implements OnInit {
     return item.pessoa.cpf_cnpj == PessoaService.pessoaLogin.cpf_cnpj
   }
 
+  sendMessage(item: NecessidadeModel){
+    NecessidadeService.currentNecessidade = item
+    this.router.navigate(['/new-Mensagem'])
+  }
+
 }

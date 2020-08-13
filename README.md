@@ -21,6 +21,7 @@
 3) Atualizar os pacotes do back-end:
     - `pip install -r requirements.txt`
 4) Rodar o back-end:
+    - configure a variável de ambiente `DOAR_FAZ_BEM_HOST = temp` no seu sistema operacional
     - `python app.py`
 
 ##### `ATENÇÃO`: Os comandos de 1 a 3 são usado somente _na primeira vez_ para instalar as ferramentas, nas próximas vezes utilize apenas o comando 4.

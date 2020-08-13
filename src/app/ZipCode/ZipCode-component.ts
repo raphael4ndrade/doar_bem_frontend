@@ -27,7 +27,7 @@ import { AddressModel, SearchZipModel } from './ZipCode-model'
             complemento: complementoField,
         })
         this.parentForm.addControl('CEP', zipCodeField)
-        this.parentForm.addControl('complemento', complementoField)
+        // this.parentForm.addControl('complemento', complementoField)
     }
 
     getFullAddress(address:AddressModel): string{
@@ -40,6 +40,7 @@ import { AddressModel, SearchZipModel } from './ZipCode-model'
     }
    
     findZipCode(param: SearchZipModel){
+        console.log('*** findZipCode =>', param)
         this.zipCodeSvc.getAddress(param.CEP).subscribe(
             resp => {
                 let obj:AddressModel = (<AddressModel> resp.json())

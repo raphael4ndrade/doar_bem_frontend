@@ -3,6 +3,7 @@ export interface MensagemModel{
     dia: string
     conteudo: string
     lida: string
+    quantidade: number
     de: string
     campanha: string
     para: string

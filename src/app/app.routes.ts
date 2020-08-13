@@ -6,6 +6,7 @@ import { PessoaComponent } from "./Pessoa/Pessoa-component";
 import { NewPessoaComponent } from "./Pessoa/new-Pessoa/new-Pessoa.component";
 import { LoginGuard } from "./login/login.guard";
 import { NecessidadeGuard } from './Necessidade/Necessidade-guard'
+import { NewMensagemComponent } from './Mensagem/new-Mensagem/new-Mensagem.component'
 
 export const ROUTES:Routes = [
     {path:'',component:LoginComponent},
@@ -19,4 +20,5 @@ export const ROUTES:Routes = [
     {path:'new-Pessoa',component:NewPessoaComponent
         // ,canActivate: [LoginGuard]
     },
+    {path: 'new-Mensagem', component: NewMensagemComponent, canActivate: [LoginGuard]}
 ]
