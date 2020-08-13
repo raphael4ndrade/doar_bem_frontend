@@ -19,7 +19,7 @@ import { NewPessoaComponent } from './Pessoa/new-Pessoa/new-Pessoa.component';
 // import { MensagemItemComponent } from './Mensagem/Mensagem-item/Mensagem-item.component';
 import { MensagemService } from './Mensagem/Mensagem-service';
 // import { MensagemListComponent } from './Mensagem/Mensagem-list/Mensagem-list.component';
-// import { NewMensagemComponent } from './Mensagem/new-Mensagem/new-Mensagem.component';
+import { NewMensagemComponent } from './Mensagem/new-Mensagem/new-Mensagem.component';
 import {LoginComponent} from './login/login.component'
 import { NavigatorComponent } from './shared/navigator/navigator.component';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
@@ -46,7 +46,7 @@ import { NecessidadeGuard } from './Necessidade/Necessidade-guard'
     // MensagemComponent,
     // MensagemItemComponent,
     // MensagemListComponent,
-    // NewMensagemComponent,
+    NewMensagemComponent,
     LoginComponent,
     HeaderComponent,
     SearchBarComponent,

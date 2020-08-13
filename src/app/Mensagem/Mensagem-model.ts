@@ -1,10 +1,10 @@
 export interface MensagemModel{
     id: number
-    dia: string
+    dia: any
     conteudo: string
     lida: string
     quantidade: number
-    de: string
-    campanha: string
-    para: string
+    de: any
+    campanha: any
+    para: any
 }

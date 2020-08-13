@@ -25,7 +25,7 @@ export class PessoaService{
     }
 
     static isONG():Boolean{
-        const pessoa = PessoaService.getCurrPessoa()
+        const pessoa = PessoaService.pessoaLogin.cpf_cnpj
         return pessoa.length == 14
     }
 

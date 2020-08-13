@@ -6,8 +6,8 @@
               <app-delete-button (delete)="remove(Necessidade)">
               </app-delete-button>            
           </div>
-          <button *ngIf="!isOwner(Necessidade)"
-          class="btn-Item-Dados"
+          <button *ngIf="canDonate(Necessidade)"
+          class="btn-Necessidade"
           (click)="sendMessage(Necessidade)">
               <i class="fa fa-commenting"
               data-toggle="tooltip" title="Entra em contato para fazer doação"></i>

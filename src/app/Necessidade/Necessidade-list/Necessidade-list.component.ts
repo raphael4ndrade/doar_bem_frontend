@@ -8,6 +8,7 @@ import {PessoaService} from '../../Pessoa/Pessoa-service'
 
 @Component({
   selector: 'app-Necessidade-list',
+  styleUrls: ['Necessidade-list.component.css'],
   templateUrl: './Necessidade-list.component.html'
 })
 export class NecessidadeListComponent implements OnInit {
@@ -53,6 +54,7 @@ export class NecessidadeListComponent implements OnInit {
   }
 
   save(item: NecessidadeModel){
+    item.quantidade *= -1 // Campanha é necessidade com qtd. negativa (faltando produto)!
     item.pessoa = PessoaService.currentPessoa
     this.NecessidadeSvc.saveNecessidade(item)
     this.items.push(item)
@@ -65,6 +67,13 @@ export class NecessidadeListComponent implements OnInit {
 
   isOwner(item: NecessidadeModel):Boolean{
     return item.pessoa.cpf_cnpj == PessoaService.pessoaLogin.cpf_cnpj
+  }
+
+  canDonate(item: NecessidadeModel):Boolean{
+    if(item.pessoa.cpf_cnpj == PessoaService.pessoaLogin.cpf_cnpj){
+      return false
+    }
+    return item.quantidade < 0
   }
 
   sendMessage(item: NecessidadeModel){

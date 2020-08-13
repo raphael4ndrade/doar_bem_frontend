@@ -5,7 +5,7 @@ import { MensagemModel } from "./Mensagem-model";
 import { RespJsonFlask, BASE_PATH_SERVER } from "../app.api";
 import { AuthService } from '../login/auth-service'
 
-const Mensagem_API = `${BASE_PATH_SERVER}/doar_faz_bem/Mensagem`
+const Mensagem_API = `${BASE_PATH_SERVER}/Mensagem`
 
 
 @Injectable()
