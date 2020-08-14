@@ -39,6 +39,7 @@ export class MensagemService{
             id: idMensagens,
             lida: 'S'
         }
+        console.log('** marcarComoLida =>', idMensagens)
         this.http.put(
             Mensagem_API,
             JSON.stringify(registro)

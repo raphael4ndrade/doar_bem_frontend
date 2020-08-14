@@ -14,8 +14,8 @@ export class MensagemItemComponent implements OnInit{
 
     ngOnInit() {}
 
-    setRead(isRead:Boolean){
-        if(isRead){
+    setRead(isChecked:Boolean){
+        if(isChecked){
             this.Mensagem.lida = 'S'
         }else{
             this.Mensagem.lida = 'N'

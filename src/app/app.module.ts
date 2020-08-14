@@ -16,9 +16,9 @@ import { PessoaService } from './Pessoa/Pessoa-service';
 import { PessoaListComponent } from './Pessoa/Pessoa-list/Pessoa-list.component';
 import { NewPessoaComponent } from './Pessoa/new-Pessoa/new-Pessoa.component';
 // import { MensagemComponent } from './Mensagem/Mensagem-component';
-// import { MensagemItemComponent } from './Mensagem/Mensagem-item/Mensagem-item.component';
+import { MensagemItemComponent } from './Mensagem/Mensagem-item/Mensagem-item.component';
+import { MensagemListComponent } from './Mensagem/Mensagem-list/Mensagem-list.component';
 import { MensagemService } from './Mensagem/Mensagem-service';
-// import { MensagemListComponent } from './Mensagem/Mensagem-list/Mensagem-list.component';
 import { NewMensagemComponent } from './Mensagem/new-Mensagem/new-Mensagem.component';
 import {LoginComponent} from './login/login.component'
 import { NavigatorComponent } from './shared/navigator/navigator.component';
@@ -44,8 +44,8 @@ import { NecessidadeGuard } from './Necessidade/Necessidade-guard'
     PessoaListComponent,
     NewPessoaComponent,
     // MensagemComponent,
-    // MensagemItemComponent,
-    // MensagemListComponent,
+    MensagemItemComponent,
+    MensagemListComponent,
     NewMensagemComponent,
     LoginComponent,
     HeaderComponent,

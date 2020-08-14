@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NecessidadeModel } from '../Necessidade-model';
 import { NecessidadeService } from '../Necessidade-service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {RespJsonFlask} from '../../app.api'
 import {PessoaService} from '../../Pessoa/Pessoa-service'
+import { Observable } from '../../../../node_modules/rxjs'
+import { Response } from "@angular/http";
 
 
 @Component({
@@ -17,12 +19,20 @@ export class NecessidadeListComponent implements OnInit {
   
   constructor(
     private NecessidadeSvc: NecessidadeService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     this.router.onSameUrlNavigation = "reload"
-    this.NecessidadeSvc.allNecessidades().subscribe(
+    const param = this.activatedRoute.snapshot.paramMap.get('descricao');
+    let func: Observable<Response>
+    if(param){
+      func = this.NecessidadeSvc.necessidadesByTitle(param)
+    }else{
+      func = this.NecessidadeSvc.allNecessidades()
+    }
+    func.subscribe(
       resp => {
         let obj:RespJsonFlask = (<RespJsonFlask>resp.json())
         this.items = (<NecessidadeModel[]>obj.data)
@@ -31,7 +41,7 @@ export class NecessidadeListComponent implements OnInit {
   }
 
   filter(param: any){
-    this.NecessidadeSvc.NecessidadesByTitle(param.searchContent).subscribe(
+    this.NecessidadeSvc.necessidadesByTitle(param.searchContent).subscribe(
       resp => {
         let obj:RespJsonFlask = (<RespJsonFlask>resp.json())
         this.items = (<NecessidadeModel[]>obj.data)

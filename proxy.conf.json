@@ -4,11 +4,9 @@
     "secure": false,
     "logLevel": "debug"
   },
-  "/cnpj/*": {
+  "cnpj/*": {
     "target": "https://www.receitaws.com.br/v1",
     "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug",
-    "pathRewrite": {"^/cnpj" : "http://www.receitaws.com.br/v1/cnpj"}
+    "logLevel": "debug"
   }
 }

@@ -31,7 +31,7 @@ export class NecessidadeService{
         )
     }
 
-    NecessidadesByTitle(text: string):Observable<Response>{
+    necessidadesByTitle(text: string):Observable<Response>{
         return this.http.get(
             `${Necessidade_API}?descricao=${text}`
             ,new RequestOptions({headers: AuthService.header})

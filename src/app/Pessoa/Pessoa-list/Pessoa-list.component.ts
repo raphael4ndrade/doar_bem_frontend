@@ -19,7 +19,7 @@ export class PessoaListComponent implements OnInit {
   constructor(
     private PessoaSvc: PessoaService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
