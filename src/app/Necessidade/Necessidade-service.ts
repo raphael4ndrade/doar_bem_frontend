@@ -38,6 +38,14 @@ export class NecessidadeService{
         )
     }
 
+    necessidadesByHashtags(text: string):Observable<Response>{
+        text = text.split('#').join('+')
+        return this.http.get(
+            `${Necessidade_API}?hashtags=${text}`
+            ,new RequestOptions({headers: AuthService.header})
+        )
+    }
+
     delete(descricao: string): void{
         this.http.delete(
             `${Necessidade_API}/${descricao}`

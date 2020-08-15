@@ -41,12 +41,17 @@ export class NecessidadeListComponent implements OnInit {
   }
 
   filter(param: any){
-    this.NecessidadeSvc.necessidadesByTitle(param.searchContent).subscribe(
+    const search: string = param.searchContent
+    let func: Observable<Response>
+    if(search.includes('#')){
+      func = this.NecessidadeSvc.necessidadesByHashtags(search)
+    }else{
+      func = this.NecessidadeSvc.necessidadesByTitle(search)
+    }
+    func.subscribe(
       resp => {
         let obj:RespJsonFlask = (<RespJsonFlask>resp.json())
         this.items = (<NecessidadeModel[]>obj.data)
-      // },error => {
-      //   if(error.status == 404) this.items = []
       }
     )
   }
