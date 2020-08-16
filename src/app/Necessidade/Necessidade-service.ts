@@ -31,9 +31,44 @@ export class NecessidadeService{
         )
     }
 
+    parse(s: string): string{
+        /*
+        Ex.: 
+            parse("#retirar Alcool #zonaSul 100-500")
+                => descricao=Alcool&quantidade=min:100+max:500&hashtags=retirar+zonaSul 
+            parse("#retirar -500")
+                => quantidade=max:500&hashtags=retirar 
+            parse("Alcool")
+                => descricao=Alcool 
+        */
+        let field: string[][] = [[],[],[]]
+        s.split(' ').map(item => {
+            if(item.includes('-')){
+                const v = item.split('-')
+                if(v[0]) field[1].push(v[0])
+                if(v[1]) field[1].push(v[1])
+            }else if(item.includes('#')){
+                field[2].push(item.replace('#', ''))
+            }else{
+                field[0].push(item)
+            }
+        })
+        let result = []
+        const names: string[] = ['descricao', 'quantidade', 'hashtags']
+        for (let i = 0; i < field.length; i++) {
+            const item: string[] = field[i];
+            const name: string = names[i]
+            if(item) result.push(
+                `${name}=${item.join('+')}`
+            )
+        }
+        return result.join('&')
+    }
+
     necessidadesByTitle(text: string):Observable<Response>{
+        const params: string = this.parse(text)
         return this.http.get(
-            `${Necessidade_API}?descricao=${text}`
+            `${Necessidade_API}?${params}`
             ,new RequestOptions({headers: AuthService.header})
         )
     }
