@@ -45,8 +45,8 @@ export class NecessidadeService{
         s.split(' ').map(item => {
             if(item.includes('-')){
                 const v = item.split('-')
-                if(v[0]) field[1].push(v[0])
-                if(v[1]) field[1].push(v[1])
+                if(v[0]) field[1].push(`min:${v[0]}`)
+                if(v[1]) field[1].push(`max:${v[1]}`)
             }else if(item.includes('#')){
                 field[2].push(item.replace('#', ''))
             }else{
@@ -69,14 +69,6 @@ export class NecessidadeService{
         const params: string = this.parse(text)
         return this.http.get(
             `${Necessidade_API}?${params}`
-            ,new RequestOptions({headers: AuthService.header})
-        )
-    }
-
-    necessidadesByHashtags(text: string):Observable<Response>{
-        text = text.split('#').join('+')
-        return this.http.get(
-            `${Necessidade_API}?hashtags=${text}`
             ,new RequestOptions({headers: AuthService.header})
         )
     }
