@@ -1,24 +1,15 @@
-import { Injectable } from "@angular/core";
-import { Http, RequestOptions, Response } from "@angular/http";
-import { Observable } from "../../../node_modules/rxjs";
-import { AuthService } from '../login/auth-service'
+import { Injectable } from "@angular/core"
+import Request from '../core/request'
 
-
+const RECEITA_URL = 'http://www.receitaws.com.br/v1/cnpj'
 @Injectable()
-export class ReceitaService{
-
+export class ReceitaService {
     constructor(
-        private http: Http,
-        private authSvc: AuthService
-    ){}
+        private request: Request
+    ) { }
 
-    consultaONG(cnpj: string):Observable<Response>{
-        const headers = this.authSvc.getHeaders()
-        console.log('** headers =>', headers)
-        return this.http.get(
-            `http://www.receitaws.com.br/v1/cnpj/${cnpj}`,
-            new RequestOptions({headers:headers})
-        )
+    consultaONG(cnpj: string) {
+        return this.request.get(`${RECEITA_URL}/${cnpj}`)
     }
 
 }

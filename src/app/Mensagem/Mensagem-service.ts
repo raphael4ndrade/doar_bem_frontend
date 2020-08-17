@@ -2,12 +2,17 @@ import { Http, RequestOptions, Response } from "@angular/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "../../../node_modules/rxjs";
 import { MensagemModel } from "./Mensagem-model";
-import { RespJsonFlask, BASE_PATH_SERVER } from "../app.api";
-import { AuthService } from '../login/auth-service'
+import { RespJsonFlask, BASE_PATH_SERVER } from "../core/api";
 
 const Mensagem_API = `${BASE_PATH_SERVER}/doar_faz_bem/Mensagem`
 
+// now we do another way of authentication
 
+const AuthService = {
+    header: null
+}
+
+// @deprecated soon a new service will be mapped...
 @Injectable()
 export class MensagemService{
 

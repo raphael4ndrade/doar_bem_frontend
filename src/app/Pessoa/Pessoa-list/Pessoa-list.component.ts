@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PessoaModel } from '../Pessoa-model';
 import { PessoaService } from '../Pessoa-service';
 import { Router,ActivatedRoute } from '@angular/router';
-import {RespJsonFlask} from '../../app.api'
+import {RespJsonFlask} from '../../core/api'
 import { Response } from "@angular/http";
 import { Observable } from "../../../../node_modules/rxjs";
 
@@ -59,7 +59,7 @@ export class PessoaListComponent implements OnInit {
     if(!confirm(`Remover Pessoa "${item.nome}" ?`)){
       return
     }
-    this.PessoaSvc.delete(item.cpf_cnpj as unknown as string)
+    // this.PessoaSvc.delete(item.cpf_cnpj as unknown as string)
     this.items.splice(this.items.indexOf(item),1)
   }
 
@@ -76,12 +76,12 @@ export class PessoaListComponent implements OnInit {
       alert('Email duplicado.')
       return
     }
-    this.PessoaSvc.savePessoa(item)
+    // this.PessoaSvc.savePessoa(item)
     this.items.push(item)
   }
 
   select(item: PessoaModel){
-    PessoaService.currentPessoa = item
+    // PessoaService.currentPessoa = item
   }
 
 }

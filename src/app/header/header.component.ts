@@ -14,7 +14,8 @@ export class HeaderComponent implements OnInit {
   }
 
   noUser():Boolean {
-    return PessoaService.currentPessoa == null
+    // return PessoaService.currentPessoa == null
+    return true
   }  
 
 }

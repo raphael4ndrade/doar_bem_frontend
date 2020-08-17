@@ -1,0 +1,19 @@
+.login-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .dfb-image > img {
+    width: calc(50vw - 48px);
+    height: auto;
+    padding: 24px;
+  }
+
+  .dfb-login {
+    width: calc(50vw - 48px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+  }
+}

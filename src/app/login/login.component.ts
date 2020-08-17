@@ -1,37 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { PessoaService } from '../Pessoa/Pessoa-service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from './auth-service'
-import {PessoaModel} from '../Pessoa/Pessoa-model'
-
+import { Component, OnInit } from '@angular/core'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import AuthService from '../core/auth'
 
 @Component({
   selector: 'app-login',
-  styleUrls: ['../../styles.css'],
+  styleUrls: [ './login.component.scss' ],
   templateUrl: './login.component.html'
 })
-export class LoginComponent implements OnInit {
-
+export default class LoginComponent implements OnInit {
   loginForm: FormGroup
 
   constructor(
-    private pessoaSvc:PessoaService,
-    private authSvc:AuthService,
-    private formBuilder: FormBuilder
-  ){
+    public formBuilder: FormBuilder,
+    public auth: AuthService
+  ) {
   }
 
   ngOnInit() {
-    this.authSvc.handShake()
-    PessoaService.currentPessoa = null
     this.loginForm = this.formBuilder.group({
-      email: this.formBuilder.control('',[Validators.required]),
-      senha: this.formBuilder.control('',[Validators.required])
+      email: this.formBuilder.control('', [ Validators.required ]),
+      password: this.formBuilder.control('', [ Validators.required ])
     })
   }
 
-  doLogin(params: PessoaModel){
-    this.pessoaSvc.pessoaLogin(params)
+  doLogin() {
+    const { email, password } = this.loginForm.value
+
+    this.auth.onSignIn(email, password)
   }
 
+  signUp() {
+    const { email, password } = this.loginForm.value
+
+    this.auth.onSignUp(email, password)
+  }
+
+  forgotPassword() {
+    const { email } = this.loginForm.value
+
+    this.auth.onForgotPassword(email)
+  }
 }

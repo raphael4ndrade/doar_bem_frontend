@@ -31,7 +31,7 @@ export class NewNecessidadeComponent implements OnInit {
       data : this.formBuilder.control('',[Validators.required]),
 
       pessoa : this.formBuilder.control(
-        PessoaService.getCurrPessoa(),
+        // PessoaService.getCurrPessoa(),
         [Validators.required]
       ),
 

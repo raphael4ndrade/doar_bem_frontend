@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NecessidadeModel } from '../Necessidade-model';
 import { NecessidadeService } from '../Necessidade-service';
 import { Router } from '@angular/router';
-import {RespJsonFlask} from '../../app.api'
+import {RespJsonFlask} from '../../core/api'
 import {PessoaService} from '../../Pessoa/Pessoa-service'
 
 
@@ -53,18 +53,19 @@ export class NecessidadeListComponent implements OnInit {
   }
 
   save(item: NecessidadeModel){
-    item.pessoa = PessoaService.currentPessoa
+    // item.pessoa = PessoaService.currentPessoa
     this.NecessidadeSvc.saveNecessidade(item)
     this.items.push(item)
   }
 
   select(item: NecessidadeModel){
-    NecessidadeService.currentNecessidade = item
+    // NecessidadeService.currentNecessidade = item
     this.router.navigate(['/new-'])
   }
 
   isOwner(item: NecessidadeModel):Boolean{
-    return item.pessoa.cpf_cnpj == PessoaService.pessoaLogin.cpf_cnpj
+    // return item.pessoa.cpf_cnpj == PessoaService.pessoaLogin.cpf_cnpj
+    return true
   }
 
 }

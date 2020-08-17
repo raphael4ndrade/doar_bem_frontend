@@ -110,7 +110,7 @@ export class NewPessoaComponent implements OnInit {
   }
 
   setImage(image: string){
-    PessoaService.selectedImage = image
+    // PessoaService.selectedImage = image
     this.selectedImage = image
   }
 
@@ -120,7 +120,8 @@ export class NewPessoaComponent implements OnInit {
   }
 
   noUser():Boolean {
-    return PessoaService.currentPessoa == null
+    return false
+    // return PessoaService.currentPessoa == null
   }  
 
 }

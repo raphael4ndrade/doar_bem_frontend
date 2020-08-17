@@ -1,3 +1,8 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
 .image-item{
     margin-top: 4px;
     margin-left: 4px;

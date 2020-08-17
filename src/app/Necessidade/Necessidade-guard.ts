@@ -11,11 +11,12 @@ export class NecessidadeGuard implements CanActivate{
     ){}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):boolean{
-        if(PessoaService.isONG()){ 
-            return true
-        }
-        alert('Somente ONG´s podem criar campanhas.')
-        this.router.navigate([''])
-        return false
+        // if(PessoaService.isONG()){ 
+        //     return true
+        // }
+        // alert('Somente ONG´s podem criar campanhas.')
+        // this.router.navigate([''])
+        // return false
+        return true
     }
 }
