@@ -28,7 +28,7 @@ export class NewNecessidadeComponent implements OnInit {
       quantidade : this.formBuilder.control('1',[Validators.required]),
       logotipo : this.formBuilder.control('',[Validators.required]),
       hashtags : this.formBuilder.control('',[Validators.required]),
-      data : this.formBuilder.control('',[Validators.required]),
+      dia : this.formBuilder.control('',[Validators.required]),
 
       pessoa : this.formBuilder.control(
         // PessoaService.getCurrPessoa(),

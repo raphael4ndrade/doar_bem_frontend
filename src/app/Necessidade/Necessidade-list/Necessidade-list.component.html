@@ -6,7 +6,13 @@
               <app-delete-button (delete)="remove(Necessidade)">
               </app-delete-button>            
           </div>
-    </app-Necessidade-item>
+          <button *ngIf="canDonate(Necessidade)"
+          class="btn-Necessidade"
+          (click)="sendMessage(Necessidade)">
+              <i class="fa fa-commenting"
+              data-toggle="tooltip" title="Entra em contato para fazer doação"></i>
+          </button>
+</app-Necessidade-item>
   </div>
   <h4 *ngIf="!items" class="jumbotron ml-4">Nenhuma Campanha encontrada. :(</h4>
   

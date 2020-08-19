@@ -23,10 +23,10 @@ import { PessoaService } from './Pessoa/Pessoa-service'
 import { PessoaListComponent } from './Pessoa/Pessoa-list/Pessoa-list.component'
 import { NewPessoaComponent } from './Pessoa/new-Pessoa/new-Pessoa.component'
 // import { MensagemComponent } from './Mensagem/Mensagem-component';
-// import { MensagemItemComponent } from './Mensagem/Mensagem-item/Mensagem-item.component';
 import { MensagemService } from './Mensagem/Mensagem-service'
-// import { MensagemListComponent } from './Mensagem/Mensagem-list/Mensagem-list.component';
-// import { NewMensagemComponent } from './Mensagem/new-Mensagem/new-Mensagem.component';
+import { MensagemListComponent } from './Mensagem/Mensagem-list/Mensagem-list.component'
+import { MensagemItemComponent } from './Mensagem/Mensagem-item/Mensagem-item.component'
+import { NewMensagemComponent } from './Mensagem/new-Mensagem/new-Mensagem.component'
 import { NavigatorComponent } from './shared/navigator/navigator.component'
 import { SearchBarComponent } from './shared/search-bar/search-bar.component'
 import { DeleteButtonComponent } from './shared/delete-button/delete-button.component'
@@ -54,9 +54,9 @@ import { NecessidadeGuard } from './Necessidade/Necessidade-guard'
     PessoaListComponent,
     NewPessoaComponent,
     // MensagemComponent,
-    // MensagemItemComponent,
-    // MensagemListComponent,
-    // NewMensagemComponent,
+    MensagemItemComponent,
+    MensagemListComponent,
+    NewMensagemComponent,
     LoginComponent,
     HeaderComponent,
     SearchBarComponent,

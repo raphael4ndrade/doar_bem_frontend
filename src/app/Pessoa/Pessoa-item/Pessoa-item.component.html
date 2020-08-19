@@ -20,7 +20,7 @@
             <span *ngIf="Pessoa.cpf_cnpj.length == 14" class="badge badge-danger">
                 ONG ou empresa
             </span>
-            <span *ngIf="Pessoa.cpf_cnpj.length == 11" class="badge badge-success">
+            <span *ngIf="Pessoa.cpf_cnpj.length < 14" class="badge badge-success">
                 Pessoa Física
             </span>
         </div>

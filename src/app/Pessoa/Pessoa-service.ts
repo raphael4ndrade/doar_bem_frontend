@@ -33,23 +33,42 @@ export class PessoaService {
     return false
   }
 
+  // loginPessoa(params: PessoaModel): void {
+  //   this.http.get(
+  //     `${Pessoa_API}?email=${params.email}&senha=${params.senha}`
+  //     , new RequestOptions({ headers: AuthService.header })
+  //   ).subscribe(
+  //     (resp) => {
+  //       const obj: RespJsonFlask = (<RespJsonFlask>resp.json())
+  //       const pessoa: PessoaModel = (<PessoaModel>(obj.data) ? obj.data[ 0 ] : null)
+  //       PessoaService.pessoaLogin = pessoa
+  //       PessoaService.currentPessoa = pessoa
+  //       if (pessoa) {
+  //         this.router.navigate([ 'Necessidade' ])
+  //       } else {
+  //         alert('Dados incorretos.')
+  //       }
+  //     }
+  //   )
+  // }
+
   // pessoaLogin(params: UserInterface): void {
-    // this.http.get(
-    //   `${person}?email=${params.email}&senha=${params.senha}`
-    //   , new RequestOptions({ headers: AuthService.header })
-    // ).subscribe(
-    //   (resp) => {
-    //     const obj: RespJsonFlask = (<RespJsonFlask>resp.json())
-    //     const pessoa: PessoaModel = (<PessoaModel>(obj.data) ? obj.data[ 0 ] : null)
-    //     PessoaService.pessoaLogin = pessoa
-    //     PessoaService.currentPessoa = pessoa
-    //     if (pessoa) {
-    //       this.router.navigate([ 'Necessidade' ])
-    //     } else {
-    //       alert('Dados incorretos.')
-    //     }
-    //   }
-    // )
+  // this.http.get(
+  //   `${person}?email=${params.email}&senha=${params.senha}`
+  //   , new RequestOptions({ headers: AuthService.header })
+  // ).subscribe(
+  //   (resp) => {
+  //     const obj: RespJsonFlask = (<RespJsonFlask>resp.json())
+  //     const pessoa: PessoaModel = (<PessoaModel>(obj.data) ? obj.data[ 0 ] : null)
+  //     PessoaService.pessoaLogin = pessoa
+  //     PessoaService.currentPessoa = pessoa
+  //     if (pessoa) {
+  //       this.router.navigate([ 'Necessidade' ])
+  //     } else {
+  //       alert('Dados incorretos.')
+  //     }
+  //   }
+  // )
   // }
 
   // constructor(

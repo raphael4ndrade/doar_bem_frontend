@@ -7,6 +7,7 @@ import { NewNecessidadeComponent } from "./Necessidade/new-Necessidade/new-Neces
 import { PessoaComponent } from "./Pessoa/Pessoa-component"
 import { NewPessoaComponent } from "./Pessoa/new-Pessoa/new-Pessoa.component"
 import { NecessidadeGuard } from './Necessidade/Necessidade-guard'
+import { NewMensagemComponent } from './Mensagem/new-Mensagem/new-Mensagem.component'
 
 // TODO: create components...
 class SignUp { }
@@ -26,6 +27,7 @@ const PRIVATE_ROUTES: Routes = [
   { path: 'Pessoa', component: PessoaComponent },
   { path: 'Pessoa/:name', component: PessoaComponent },
   { path: 'new-Pessoa', component: NewPessoaComponent },
+  {path: 'new-Mensagem', component: NewMensagemComponent },
 ]
 
 export const ROUTES = [
